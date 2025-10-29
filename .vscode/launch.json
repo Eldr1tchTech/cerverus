@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/server",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build",
+            "externalConsole": false,
+            "stopAtEntry": false
+        }
+    ]
+}
