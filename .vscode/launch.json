@@ -2,12 +2,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch",
+            "name": "Launch Server",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/server",
+            "program": "${workspaceFolder}/bin/server/server",
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "build",
+            "externalConsole": false,
+            "stopAtEntry": false
+        },
+        {
+            "name": "Launch Client",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/client/client",
+            "cwd": "${workspaceFolder}",
             "externalConsole": false,
             "stopAtEntry": false
         }

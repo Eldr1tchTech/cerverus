@@ -2,9 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build all",
             "type": "shell",
-            "command": "make",
+            "command": "./build-all.sh",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -12,6 +12,42 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            }
+        },
+        {
+            "label": "build lib",
+            "type": "shell",
+            "command": "./build-lib.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "build server",
+            "type": "shell",
+            "command": "./build-server.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "build client",
+            "type": "shell",
+            "command": "./build-client.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
             }
         }
     ]

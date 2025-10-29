@@ -1,0 +1,1 @@
+RUN build-lib.sh build-server.sh build-client.sh

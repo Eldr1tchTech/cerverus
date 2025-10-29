@@ -1,8 +1,8 @@
 CC = clang
 CFLAGS = -Wall -Wextra
-TARGET_DIR = bin
+TARGET_DIR = bin/server
 TARGET = server
-SRC_DIR = src
+SRC_DIR = server/src
 SRCS = $(shell find $(SRC_DIR) -type f -name "*.c")
 
 $(TARGET): $(SRCS)
