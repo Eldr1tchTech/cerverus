@@ -1,4 +1,4 @@
-## Credit
+# Credit
 
 The code was inspired by, copied from, references, and/or is connected to:
 
