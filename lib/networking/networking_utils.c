@@ -124,3 +124,6 @@ void parse_headers(request *req, char *raw_headers)
         raw_headers = current + 4;
     }
 }
+
+// TODO: Write this next.
+char* serialize_headers(header* headers, int header_count);
