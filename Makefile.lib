@@ -1,7 +1,7 @@
 CC = clang
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -fPIC -I.
 TARGET_DIR = bin
-TARGET = lib.so
+TARGET = libcerverus.so
 SRC_DIR = lib
 SRCS = $(shell find $(SRC_DIR) -type f -name "*.c")
 

@@ -1,5 +1,6 @@
 CC = clang
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -I./lib
+LDFLAGS = -L./bin -lcerverus
 TARGET_DIR = bin/client
 TARGET = client
 SRC_DIR = client/src
@@ -7,4 +8,4 @@ SRCS = $(shell find $(SRC_DIR) -type f -name "*.c")
 
 $(TARGET): $(SRCS)
 	mkdir -p $(TARGET_DIR)
-	$(CC) $(CFLAGS) -o $(TARGET_DIR)/$(TARGET) $(SRCS)
+	$(CC) $(CFLAGS) -o $(TARGET_DIR)/$(TARGET) $(SRCS) $(LDFLAGS)

@@ -1,1 +1,3 @@
-RUN Makefile.server make
+echo "Building Server..."
+make -f Makefile.server
+echo "Client build complete!"
