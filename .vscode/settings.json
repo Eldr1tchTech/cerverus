@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "string.h": "c",
-        "cmemory.h": "c"
+        "cmemory.h": "c",
+        "networking_types.inl": "c"
     }
 }

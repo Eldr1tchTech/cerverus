@@ -1,7 +1,5 @@
 #pragma once
 
-// CREDIT: 0
-
 typedef enum log_level {
     LOG_LEVEL_ERROR = 1,
     LOG_LEVEL_DEBUG = 2,
