@@ -6,6 +6,8 @@ TARGET = server
 SRC_DIR = server/src
 SRCS = $(shell find $(SRC_DIR) -type f -name "*.c")
 
+.PHONY: $(TARGET)
+
 $(TARGET): $(SRCS)
 	mkdir -p $(TARGET_DIR)
 	$(CC) $(CFLAGS) -o $(TARGET_DIR)/$(TARGET) $(SRCS) $(LDFLAGS)
