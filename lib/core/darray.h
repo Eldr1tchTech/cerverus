@@ -15,7 +15,3 @@ void darray_create(darray* darr, int stride, int darr_size);
 void darray_resize(darray* darr);
 
 void darray_destroy(darray* darr);
-
-void darray_add(darray* darr, void* data);
-
-void darray_remove();

@@ -4,5 +4,5 @@
 
 typedef struct router
 {
-    route_trie* routes;
+    route_trie* r_trie;
 };

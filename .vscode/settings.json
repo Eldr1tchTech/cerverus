@@ -6,6 +6,8 @@
         "stdlib.h": "c",
         "logger.h": "c",
         "internet": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "stdint.h": "c",
+        "mman.h": "c"
     }
 }

@@ -17,13 +17,14 @@ void darray_resize(darray* darr) {
     void* new_data = cmem_alloc(memory_tag_darray, new_size);
 
     cmem_memcpy(darr->data, new_data, darr->darr_size);
-    cmem_free(darr->data);
+    cmem_free(memory_tag_darray, darr->data, darr->darr_size * darr->stride);
 
     darr->data = new_data;
     darr->darr_size = new_size;
 }
 
 void darray_destroy(darray* darr) {
-    cmem_free(darr->data);
-    cmem_free(darr);    // Is this even needed since there aren't any pointers used here? I feel like an AI just following patterns I have seen asking this question.
+    cmem_free(memory_tag_darray, darr->data, darr->darr_size * darr->stride);
+    cmem_free(memory_tag_darray, darr, sizeof(darray));
+    darr = 0;
 }
