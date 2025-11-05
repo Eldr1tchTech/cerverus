@@ -2,6 +2,10 @@
     "files.associations": {
         "string.h": "c",
         "cmemory.h": "c",
-        "networking_types.inl": "c"
+        "networking_types.inl": "c",
+        "stdlib.h": "c",
+        "logger.h": "c",
+        "internet": "c",
+        "typeinfo": "c"
     }
 }

@@ -24,7 +24,7 @@ char *response_serialize(response *res)
         s_lin->status_code = temp_status_code;
     }
 
-    char *res_stat_lin_buffer = (char *)cmem_allocate(MEMORY_TAG_STRING, sizeof(char *) * 64);
+    char *res_stat_lin_buffer = (char *)cmem_alloc(MEMORY_TAG_STRING, sizeof(char *) * 64);
     int res_stat_lin_buffer_chars_written = snprintf(res_stat_lin_buffer, sizeof(res_stat_lin_buffer),
                                  "%s %i %s\r\n", serialize_protocol_version(s_lin->p_version),
                                  s_lin->status_code, s_lin->reason_phrase);

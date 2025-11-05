@@ -1,5 +1,7 @@
 #include "networking_utils.h"
 
+#include <stdio.h>
+
 http_method parse_http_method(char *raw_method)
 {
     if (strcmp(raw_method, "GET") == 0)
@@ -111,6 +113,7 @@ void request_add_header(request *req, header h)
     LOG_DEBUG("request_add_header - Attempted to add more headers to an request than are allowed. MAX_HEADER_COUNT = %i", MAX_HEADER_COUNT);
 }
 
+// This is probably wrong, especially the while
 void parse_headers(request *req, char *raw_headers)
 {
     char *current;
@@ -126,4 +129,13 @@ void parse_headers(request *req, char *raw_headers)
 }
 
 // TODO: Write this next.
-char* serialize_headers(header* headers, int header_count);
+char* serialize_headers(header* headers, int header_count) {
+    char* serialized_headers;
+    char* current_header = "";
+    for (int i = 0; i < header_count; i++)
+    {
+        sprintf(current_header, "%s: %s\r\n", headers[i].key, headers[i].value);
+        strcat(serialize_headers, current_header);
+    }
+    return serialize_headers;
+}
