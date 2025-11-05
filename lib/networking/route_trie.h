@@ -31,6 +31,6 @@ void route_trie_create(route_trie* r_trie);
 
 void route_trie_destroy(route_trie* r_trie);
 
-route_handler route_trie_find_handler(route_trie* trie, http_method method, char* target);
+route_handler route_trie_find_handler(route_trie* trie, http_method method, char* path);
 
 int route_trie_add_route(route_trie* r_trie, http_method method, char* path, route_handler handler);

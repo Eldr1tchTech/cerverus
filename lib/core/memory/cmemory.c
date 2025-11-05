@@ -208,14 +208,13 @@ void cmem_free(memory_tag tag, void* block, size_t size) {
     // Update statistics
     state_ptr->sizes[tag] -= size;
     state_ptr->allocations[tag]--;
+
+    // Zero Memory
+    
     
     // Create a new free list node
-    free_list_node* new_node = (free_list_node*)mmap(
-        NULL, sizeof(free_list_node),
-        PROT_READ | PROT_WRITE,
-        MAP_PRIVATE | MAP_ANONYMOUS,
-        -1, 0
-    );
+    free_list_node* new_node;
+    fl_node_create(new_node);
     
     if (new_node == MAP_FAILED) {
         LOG_ERROR("Failed to allocate free list node during free");
