@@ -2,9 +2,9 @@
 
 #include <string.h>
 
-void trie_create(trie *t, size_t dat_size)
+trie* trie_create(size_t dat_size)
 {
-    t = (trie *)cmem_alloc(memory_tag_trie, sizeof(trie));
+    trie *t = (trie *)cmem_alloc(memory_tag_trie, sizeof(trie));
     t->data_size = dat_size;
     darray_create(t->children, sizeof(trie_node *), DEFAULT_CHILDREN_DARRAY_SIZE);
 }
@@ -12,7 +12,7 @@ void trie_create(trie *t, size_t dat_size)
 // make some sort of recursive function
 void trie_destroy(trie *t);
 
-trie_node *create_node(trie *t)
+trie_node *trie_create_node(trie *t)
 {
     trie_node *new_node = (trie_node *)cmem_alloc(memory_tag_trie, sizeof(trie_node));
     darray_create(new_node->children, sizeof(trie_node *), DEFAULT_CHILDREN_DARRAY_SIZE);
@@ -30,7 +30,7 @@ void trie_insert(trie *t, trie_node *n)
     {
         for (int j = 0; j < curr_darr->length; j++)
         {
-            if (strcmp(n->key[i], n_data[j]->key) == 0)
+            if (n->key[i] == n_data[j]->key[0])
             {
                 if (i == strlen(n->key) - 1)
                 {
@@ -66,7 +66,7 @@ void *trie_search(trie *t, char *k_arg)
         on_track = 0;
         for (int j = 0; j < curr_darr->length && !on_track; j++)
         {
-            if (strcmp(k_arg[i], n_data[j]->key) == 0)
+            if (k_arg[i] == n_data[j]->key)
             {
                 if (i == strlen(k_arg) - 1)
                 {

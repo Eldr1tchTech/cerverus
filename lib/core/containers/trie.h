@@ -20,7 +20,7 @@ typedef struct trie
     size_t data_size;
 } trie;
 
-void trie_create(trie* t, size_t dat_size);
+trie* trie_create(size_t dat_size);
 
 void trie_destroy(trie* t);
 
