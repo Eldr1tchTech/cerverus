@@ -186,6 +186,8 @@ void* cmem_alloc(memory_tag tag, size_t size) {
         best_fit->offset += size;
         best_fit->size -= size;
     }
+
+    cmem_memzero(ptr, size);
     
     return ptr;
 }
