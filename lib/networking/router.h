@@ -1,8 +1,8 @@
 #pragma once
 
-#include "route_trie.h"
+#include "routing_table.h"
 
 typedef struct router
 {
-    route_trie* r_trie;
+    routing_table* r_tab;
 };

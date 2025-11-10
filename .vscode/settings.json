@@ -9,6 +9,7 @@
         "typeinfo": "c",
         "stdint.h": "c",
         "mman.h": "c",
-        "route_trie.h": "c"
+        "route_trie.h": "c",
+        "darray.h": "c"
     }
 }
