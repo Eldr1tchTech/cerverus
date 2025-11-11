@@ -10,6 +10,7 @@
 #define MEMORY_TAG_LIST \
     X(memory_tag_darray, "DARRAY") \
     X(memory_tag_trie, "TRIE") \
+    X(memory_tag_linked_list, "LINKED_LIST") \
     X(memory_tag_string, "STRING") \
     X(memory_tag_free_list, "FREE_LIST") \
     X(memory_tag_unknown, "UNKNOWN")

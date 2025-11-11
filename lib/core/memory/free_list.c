@@ -20,4 +20,5 @@ int fl_node_create(free_list_node* node) {
 
 void fl_node_destroy(free_list_node* node) {
     munmap(node, sizeof(free_list_node));
+    node = 0;
 }

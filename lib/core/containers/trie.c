@@ -88,18 +88,18 @@ void trie_insert(trie *t, trie_node *n)
 }
 
 // returns the data, or NULL if it could not be found
-void *trie_search(trie *t, char *k_arg)
+void *trie_search(trie *t, void *k_arg)
 {
     darray *curr_darr = t->children;
     trie_node **n_data = curr_darr->data;
     int on_track = 1;
-    size_t key_len = strlen(k_arg);
+    size_t key_len = t->k_len(k_arg);
     for (int i = 0; i < key_len && on_track; i++)
     {
         on_track = 0;
         for (int j = 0; j < curr_darr->length && !on_track; j++)
         {
-            if (k_arg[i] == n_data[j]->key)
+            if (t->k_cmp(k_arg[i], n_data[j]->key) == 0)
             {
                 if (i == key_len - 1)
                 {
